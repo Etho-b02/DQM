@@ -53,6 +53,14 @@ cet_build_plugin(DqmStm art::module
       ROOT::Postscript
 )
 
+cet_build_plugin(DqmStm2 art::module
+    REG_SOURCE DqmStm2_module.cc
+    LIBRARIES REG
+      Offline::DbService
+      art_root_io::TFileService_service
+      ROOT::Postscript
+)
+    
 cet_build_plugin(DqmStr art::module
     REG_SOURCE DqmStr_module.cc
     LIBRARIES REG

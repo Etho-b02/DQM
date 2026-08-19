@@ -11,7 +11,8 @@ physics:
 {
   producers : {}
   analyzers : {
-   dqmStm : {
+   dqmStm :
+   {
      module_type : DqmStm
      phHPGeTag: "makeSTMDigis:phHPGe"
      phLaBrTag: "makeSTMDigis:phLaBr"
@@ -21,16 +22,21 @@ physics:
      zsLaBrTag: "makeSTMDigis:zsLaBr"
      HPGefragSummaryTag: "makeSTMDigis:stmFragSummaryHPGe"
      LaBrfragSummaryTag: "makeSTMDigis:stmFragSummaryLaBr"
-
-     digiTag : makeSTMDigis
-
    }
-  }
-  
+
+   dqmStm2 :
+   {
+     module_type : DqmStm2
+     phHPGeDigisTag: "makeSTMDigis:phHPGe"
+     phLaBrDigisTag: "makeSTMDigis:phLaBr"
+     fragSummaryHPGeTag: "makeSTMDigis:stmFragSummaryHPGe"
+     fragSummaryLaBrTag: "makeSTMDigis:stmFragSummaryLaBr"
+   }
+
+  }  
 
  MyTrigPath : []
- MyEndPath : [dqmStm]
-
+ MyEndPath : [dqmStm,dqmStm2]
 }
 
-services.TFileService.fileName : "dqm_stm.root"
+services.TFileService.fileName : "dqm_stm_comparison.root"
